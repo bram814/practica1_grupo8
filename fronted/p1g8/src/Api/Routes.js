@@ -11,3 +11,18 @@ export async function setIMPAROPAR(num){ // Traer todo el cargo
 
     });
 }
+
+
+// ruta segundo problema
+const url_api_setfibo = "http://localhost:3000/fibo/";
+
+export async function setfibo(num){
+
+    return fetch(url_api_setfibo+num, {
+        method: "GET",
+        params: JSON.stringify({
+            numero: num,
+        }),
+
+    });
+}

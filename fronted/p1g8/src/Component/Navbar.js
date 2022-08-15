@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
-import { HOME } from '../Config/env';
+import { HOME, PAROIMPAR, fibo } from '../Config/env';
 
 class Navbar extends Component{
 
@@ -17,7 +17,10 @@ class Navbar extends Component{
                                 <Link className="nav-link active" to={HOME}>Home</Link>
                                 </li>
                                 <li className="nav-item">
-                                <Link className="nav-link active" to='/PAROIMPAR'>Problema 1</Link>
+                                <Link className="nav-link active" to={PAROIMPAR}>Problema 1</Link>
+                                </li>
+                                <li className="nav-item">
+                                <Link className="nav-link active" to={fibo}>Problema 2</Link>
                                 </li>
                             </ul>
 
