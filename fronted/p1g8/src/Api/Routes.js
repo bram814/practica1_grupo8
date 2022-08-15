@@ -69,3 +69,34 @@ export async function setRaiz(num){
 
     });
 }
+
+
+// ruta cuarto parte 2 problema
+const url_api_setMulti = "http://localhost:3000/multi/";
+
+export async function setMulti(num1, num2){
+
+    return fetch(url_api_setMulti+num1 + "/" + num2, {
+        method: "GET",
+        params: JSON.stringify({
+            numero1: num1,
+            numero2: num2
+        }),
+
+    });
+}
+
+// ruta quinta parte 2 problema
+const url_api_setDiv = "http://localhost:3000/div/";
+
+export async function setDiv(num1, num2){
+
+    return fetch(url_api_setDiv+num1 + "/" + num2, {
+        method: "GET",
+        params: JSON.stringify({
+            numero1: num1,
+            numero2: num2
+        }),
+
+    });
+}
