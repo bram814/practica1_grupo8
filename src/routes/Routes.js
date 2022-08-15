@@ -69,4 +69,18 @@ router.get('/ALREVEZ/:palabra', (req, res) => {
     });
 });
 
+router.get('/Potencia/:numero', (req, res) => {
+    const numero = req.params.numero
+    //operating
+    const pow = Math.pow(numero,3)
+    //preformatting data
+    const data = {
+        name: "Potencia",
+        result: pow
+    };
+    //answer
+    res.json(data)
+});
+
+
 module.exports = router;
