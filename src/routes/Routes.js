@@ -55,4 +55,18 @@ var fib = function(n) {
 }
 
 
+router.get('/ALREVEZ/:palabra', (req, res) => {
+    var cadena = req.params.palabra;
+    var separada = cadena.split("");
+    var invertida = separada.reverse();
+    var unida = invertida.join("");
+
+    console.log(unida);
+    result = unida
+
+    res.status(200).json({
+        Result : result
+    });
+});
+
 module.exports = router;
