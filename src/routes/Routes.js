@@ -1,6 +1,8 @@
 const {Router} = require('express');
 const router = Router();
 
+var numerosfibo = [];
+
 // req : request
 // res : responseve
 router.get('/', (req, res) => {
@@ -30,6 +32,27 @@ router.get('/PAROIMPAR/:numero', (req, res) => {
         Result : result
     });
 });
+
+router.get('/fibo/:numero', (req, res) => {
+
+    numerosfibo = []
+
+    var numero = req.params.numero;
+
+    fib(numero);
+
+    res.status(200).json({
+        Resultado : numerosfibo
+    });
+
+});
+
+var fib = function(n) {
+    numerosfibo.push(n)
+    if (n <= 1) return n;
+
+    return fib(n-1) + fib(n-2);
+}
 
 
 module.exports = router;
