@@ -82,5 +82,15 @@ router.get('/Potencia/:numero', (req, res) => {
     res.json(data)
 });
 
+router.get('/Raiz/:numero', (req, res) =>{
+    var numero1 = req.params.numero;
+
+    const Cubica = Math.pow(numero1, 1/3);
+
+    res.status(200).json({
+    Resultado : Cubica
+    });
+});
+
 
 module.exports = router;
