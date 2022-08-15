@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
-import { HOME, PAROIMPAR, fibo, ALREVEZ, POTENCIA, RAIZ, MULTI } from '../Config/env';
+import { HOME, PAROIMPAR, fibo, ALREVEZ, POTENCIA, RAIZ, MULTI, DIV } from '../Config/env';
 
 class Navbar extends Component{
 
@@ -33,6 +33,9 @@ class Navbar extends Component{
                                 </li>
                                 <li className="nav-item">
                                 <Link className="nav-link active" to={MULTI}>Problema 5</Link>
+                                </li>
+                                <li className="nav-item">
+                                <Link className="nav-link active" to={DIV}>Problema 5_2</Link>
                                 </li>
                             </ul>
 
