@@ -92,5 +92,27 @@ router.get('/Raiz/:numero', (req, res) =>{
     });
 });
 
+router.get('/multi/:numero1/:numero2', (req, res) =>{
+    var numero1 = req.params.numero1;
+    var numero2 = req.params.numero2;
+
+    resul = numero1*numero2
+
+    res.status(200).json({
+    Resultado : resul
+    });
+});
+
+router.get('/div/:numero1/:numero2', (req, res) =>{
+    var numero1 = req.params.numero1;
+    var numero2 = req.params.numero2;
+
+    resul = numero1/numero2
+
+    res.status(200).json({
+    Resultado : resul
+    });
+});
+
 
 module.exports = router;
