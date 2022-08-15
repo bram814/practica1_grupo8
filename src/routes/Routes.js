@@ -16,5 +16,20 @@ router.get('/', (req, res) => {
     });
 });
 
+router.get('/PAROIMPAR/:numero', (req, res) => {
+
+    var numero = req.params.numero;
+    var result = "Impar";
+
+    console.log(numero);
+    if(numero%2 == 0){
+        result = "Par";
+    }
+
+    res.status(200).json({
+        Result : result
+    });
+});
+
 
 module.exports = router;
