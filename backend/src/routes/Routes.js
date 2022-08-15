@@ -107,11 +107,17 @@ router.get('/div/:numero1/:numero2', (req, res) =>{
     var numero1 = req.params.numero1;
     var numero2 = req.params.numero2;
 
-    resul = numero1/numero2
-
-    res.status(200).json({
-    Resultado : resul
-    });
+    if (numero2 == 0){
+        res.status(200).json({
+            Resultado : "No se puede realizar division entre 0"
+        });
+    }else{
+        resul = numero1/numero2
+    
+        res.status(200).json({
+            Resultado : resul
+        });
+    }
 });
 
 
