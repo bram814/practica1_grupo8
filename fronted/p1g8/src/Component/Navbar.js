@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
-import { HOME, PAROIMPAR, fibo, ALREVEZ } from '../Config/env';
+import { HOME, PAROIMPAR, fibo, ALREVEZ, POTENCIA } from '../Config/env';
 
 class Navbar extends Component{
 
@@ -24,6 +24,9 @@ class Navbar extends Component{
                                 </li>
                                 <li className="nav-item">
                                 <Link className="nav-link active" to={ALREVEZ}>Problema 3</Link>
+                                </li>
+                                <li className="nav-item">
+                                <Link className="nav-link active" to={POTENCIA}>Problema 4</Link>
                                 </li>
                             </ul>
 

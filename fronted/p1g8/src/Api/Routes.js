@@ -40,3 +40,17 @@ export async function setALREVEZ(cadena){
 
     });
 }
+
+// ruta cuarto problema
+const url_api_setPotencia = "http://localhost:3000/Potencia/";
+
+export async function setpotencia(numero_){
+
+    return fetch(url_api_setPotencia+numero_, {
+        method: "GET",
+        params: JSON.stringify({
+            numero: numero_,
+        }),
+
+    });
+}
