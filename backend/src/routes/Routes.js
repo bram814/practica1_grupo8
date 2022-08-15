@@ -58,11 +58,16 @@ var fib = function(n) {
 router.get('/ALREVEZ/:palabra', (req, res) => {
     var cadena = req.params.palabra;
     var separada = cadena.split("");
+    var separada2 = cadena.split("");
+    for(i=1; i<separada2.length; i++){
+        separada2[i]=separada2[i]+"|"
+    }
     var invertida = separada.reverse();
+    var invertida2 = separada2.reverse();
     var unida = invertida.join("");
-
+    var unida2= invertida2.join("");
     console.log(unida);
-    result = unida
+    result = 'Palabra invertida: '+ unida +"\n" +"Letras separadas: "+ unida2;
 
     res.status(200).json({
         Result : result
