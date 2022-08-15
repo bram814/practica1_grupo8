@@ -1,0 +1,25 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "ayd1",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bram814/-AYD1-Practica1_201800937.git"
+  },
+  "author": "Grupo 8",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bram814/-AYD1-Practica1_201800937/issues"
+  },
+  "homepage": "https://github.com/bram814/-AYD1-Practica1_201800937#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.19"
+  }
+}
