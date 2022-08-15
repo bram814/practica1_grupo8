@@ -26,3 +26,17 @@ export async function setfibo(num){
 
     });
 }
+
+// ruta tercer problema
+const url_api_setAlrevez = "http://localhost:3000/ALREVEZ/";
+
+export async function setALREVEZ(cadena){
+
+    return fetch(url_api_setAlrevez+cadena, {
+        method: "GET",
+        params: JSON.stringify({
+            palabra: cadena,
+        }),
+
+    });
+}
