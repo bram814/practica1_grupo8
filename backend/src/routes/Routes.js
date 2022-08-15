@@ -39,30 +39,36 @@ router.get('/fibo/:numero', (req, res) => {
 
     var numero = req.params.numero;
 
-    fib(numero);
-
     res.status(200).json({
-        Resultado : numerosfibo
+        Resultado : fib(numero)
     });
 
 });
 
 var fib = function(n) {
-    numerosfibo.push(n)
-    if (n <= 1) return n;
-
-    return fib(n-1) + fib(n-2);
+    if (n === 1) {
+        return [0, 1];
+      } else {
+        var arr = fib(n - 1);
+        arr.push(arr[arr.length - 1] + arr[arr.length - 2]);
+        return arr;
+      }
 }
 
 
 router.get('/ALREVEZ/:palabra', (req, res) => {
     var cadena = req.params.palabra;
     var separada = cadena.split("");
+    var separada2 = cadena.split("");
+    for(i=1; i<separada2.length; i++){
+        separada2[i]=separada2[i]+"|"
+    }
     var invertida = separada.reverse();
+    var invertida2 = separada2.reverse();
     var unida = invertida.join("");
-
+    var unida2= invertida2.join("");
     console.log(unida);
-    result = unida
+    result = 'Palabra invertida: '+ unida +"\n" +"Letras separadas: "+ unida2;
 
     res.status(200).json({
         Result : result
