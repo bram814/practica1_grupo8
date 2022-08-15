@@ -55,4 +55,64 @@ var fib = function(n) {
 }
 
 
+router.get('/ALREVEZ/:palabra', (req, res) => {
+    var cadena = req.params.palabra;
+    var separada = cadena.split("");
+    var invertida = separada.reverse();
+    var unida = invertida.join("");
+
+    console.log(unida);
+    result = unida
+
+    res.status(200).json({
+        Result : result
+    });
+});
+
+router.get('/Potencia/:numero', (req, res) => {
+    const numero = req.params.numero
+    //operating
+    const pow = Math.pow(numero,3)
+    //preformatting data
+    const data = {
+        name: "Potencia",
+        result: pow
+    };
+    //answer
+    res.json(data)
+});
+
+router.get('/Raiz/:numero', (req, res) =>{
+    var numero1 = req.params.numero;
+
+    const Cubica = Math.pow(numero1, 1/3);
+
+    res.status(200).json({
+    Resultado : Cubica
+    });
+});
+
+router.get('/multi/:numero1/:numero2', (req, res) =>{
+    var numero1 = req.params.numero1;
+    var numero2 = req.params.numero2;
+
+    resul = numero1*numero2
+
+    res.status(200).json({
+    Resultado : resul
+    });
+});
+
+router.get('/div/:numero1/:numero2', (req, res) =>{
+    var numero1 = req.params.numero1;
+    var numero2 = req.params.numero2;
+
+    resul = numero1/numero2
+
+    res.status(200).json({
+    Resultado : resul
+    });
+});
+
+
 module.exports = router;
