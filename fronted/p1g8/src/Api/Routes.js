@@ -54,3 +54,18 @@ export async function setpotencia(numero_){
 
     });
 }
+
+
+// ruta cuarto parte 2 problema
+const url_api_setRaiz = "http://localhost:3000/Raiz/";
+
+export async function setRaiz(num){
+
+    return fetch(url_api_setRaiz+num, {
+        method: "GET",
+        params: JSON.stringify({
+            numero: num,
+        }),
+
+    });
+}
