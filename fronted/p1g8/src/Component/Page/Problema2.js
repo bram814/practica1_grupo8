@@ -6,6 +6,7 @@ import { setfibo } from '../../Api/Routes';
 function Problema2(props){ 
 
     const [numero, setNumero] = useState('');
+    const [cadena, setCadena] = useState('');
 
 
     function handleInputChangeNumero(e){
@@ -19,6 +20,7 @@ function Problema2(props){
         var query = await response.json();
         console.log(query);
         alert(query.Resultado);
+        setCadena(query.Resultado);
         setNumero('');
 
     }
@@ -29,6 +31,7 @@ function Problema2(props){
                 <form className="form-aplicante" onSubmit={handleAplicante}>
                     <h1>Fibonacci</h1>
                     <input className="etiqueta-aplicante" type="text" placeholder="Numero" value={numero} onChange={handleInputChangeNumero} />
+                    <input className="etiqueta-aplicante" type="text" value={cadena} readOnly/>
                     <button className="boton-aplicante" type="submit">Enviar</button>
                 </form>
             </div>

@@ -1,27 +1,31 @@
 import React, {useState} from 'react';
 import './css/style.css'
-import { setpotencia } from '../../Api/Routes';
+import { setDiv } from '../../Api/Routes';
 
 
-function Problema4(props){ 
+function Problema5_2(props){ 
 
     const [numero, setNumero] = useState('');
-    const [result, setresult] = useState('');
+    const [numero2, setNumero2] = useState('');
 
 
     function handleInputChangeNumero(e){
         setNumero(e.target.value)
     }
 
+    function handleInputChangeNumero2(e){
+        setNumero2(e.target.value)
+    }
+
     async function handleAplicante(e){
         e.preventDefault();
         console.log(numero);
-        var response = await setpotencia(parseInt(numero));
+        var response = await setDiv(parseInt(numero), parseInt(numero2));
         var query = await response.json();
         console.log(query);
-        setresult(query.result)
-        alert(query.result);
+        alert(query.Resultado);
         setNumero('');
+        setNumero2('');
 
     }
     return(
@@ -29,13 +33,11 @@ function Problema4(props){
         <div>
             <div className="row-md-6">
                 <form className="form-aplicante" onSubmit={handleAplicante}>
-                    <h1>Potencia</h1>
-                    <input className="etiqueta-aplicante" type="text" placeholder="Numero" value={numero} onChange={handleInputChangeNumero} />
+                    <h1>Division</h1>
+                    <input className="etiqueta-aplicante" type="text" placeholder="Numero 1" value={numero} onChange={handleInputChangeNumero} />
+                    <input className="etiqueta-aplicante" type="text" placeholder="Numero 2" value={numero2} onChange={handleInputChangeNumero2} />
                     <button className="boton-aplicante" type="submit">Enviar</button>
                 </form>
-                <center>
-                <h1>Su resultado es : {result}</h1>
-                </center>
             </div>
         </div>
         </>  
@@ -44,4 +46,4 @@ function Problema4(props){
 }
 
 
-export default Problema4;
+export default Problema5_2;
