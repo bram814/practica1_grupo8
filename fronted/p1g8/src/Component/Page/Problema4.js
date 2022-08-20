@@ -6,6 +6,7 @@ import { setpotencia } from '../../Api/Routes';
 function Problema4(props){ 
 
     const [numero, setNumero] = useState('');
+    const [result, setresult] = useState('');
 
 
     function handleInputChangeNumero(e){
@@ -18,6 +19,7 @@ function Problema4(props){
         var response = await setpotencia(parseInt(numero));
         var query = await response.json();
         console.log(query);
+        setresult(query.result)
         alert(query.result);
         setNumero('');
 
@@ -31,6 +33,9 @@ function Problema4(props){
                     <input className="etiqueta-aplicante" type="text" placeholder="Numero" value={numero} onChange={handleInputChangeNumero} />
                     <button className="boton-aplicante" type="submit">Enviar</button>
                 </form>
+                <center>
+                <h1>Su resultado es : {result}</h1>
+                </center>
             </div>
         </div>
         </>  

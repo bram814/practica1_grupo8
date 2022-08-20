@@ -28,6 +28,9 @@ function Problema4_2(props){
             <div className="row-md-6">
                 <form className="form-aplicante" onSubmit={handleAplicante}>
                     <h1>Raiz</h1>
+                    <p>
+                        Hello There...
+                    </p>
                     <input className="etiqueta-aplicante" type="text" placeholder="Numero" value={numero} onChange={handleInputChangeNumero} />
                     <button className="boton-aplicante" type="submit">Enviar</button>
                 </form>
